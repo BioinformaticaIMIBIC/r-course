@@ -4,6 +4,8 @@
 # Fecha: 04/11/2024                                                            #
 #                                                                              #
 # Autor: Adrián Santiago                                                       #
+# Descripción: session1.R es parte de un curso de iniciación a R impartido por #
+#              la UCAIB Bioinformática y Bioestadística del IMIBIC.            # 
 ################################################################################
 
 
@@ -20,7 +22,7 @@ library(readxl)
 
 
 
-0## Importar datasets
+## Importar datasets
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Cargar tablas
@@ -54,9 +56,8 @@ input_xlsx <- read_excel("iris_dataset.xlsx" )
 
 # Aritméticos
 # Ejercicio 1. Calcula el área de un círculo con radio 5
-#
 #  |
-#   --> Aquí va tú código
+#  '--> Aquí va tú código
 A <- 3.1415 * 5 ^ 2
    
 
@@ -65,7 +66,7 @@ A <- 3.1415 * 5 ^ 2
 # de ADN
 seq <- "GCCATGAGGGTC"
 #  |
-#   --> Aquí va tú código
+#  '--> Aquí va tú código
    
    
 
@@ -120,7 +121,6 @@ m <- matrix(data = 1:9, nrow = 3, ncol = 3)
 m
 
 # Crea una matriz (p) de 20 elementos con la secuencia del 1 al 20
-#
 #  |
 #  '--> Aquí va tú código
 
@@ -134,9 +134,8 @@ new_row <- c(5, 10, 15)
 rbind(m, new_row) # Añadir nueva fila
 
 # Inventa y añade una nueva fila a la matriz "m"
-#
 #  |
-#   --> Aquí va tú código
+#  '--> Aquí va tú código
 
 
 new_col <- c(7, 14, 21)
@@ -196,7 +195,10 @@ df
 
 df[2, c(1,2)]
 
-df[df$Columna_1 > 5, ]
+df[df$Columna_1 > 5, ] # El simbolo "$" permite indexar una columna 
+                       # por su nombre
+
+
 
 
 
@@ -224,4 +226,32 @@ mi_lista[-3] # Equivalente
 
 
 
+## Ejercicios complementarios
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+# Vamos a trabajar con un dataset de marcas comerciales de cereales.
+
+# 1. Importa el dataset cereal.csv.
+
+
+# 2. Visualiza el dataset y su estructura (nombre de columnas, filas, 
+# dimesiones, tipos de clases en sus columnas).
+
+
+# 3. Crea una nueva columna llamada "totalcarb" que sea la suma de las columnas
+# "carbo" y "sugars".
+
+
+# 4. Crea un nuevo data.frame "kelloggs" que recoja solo las filas del dataset 
+# cuyo manufacturador sea "Kelloggs".
+
+
+# 4. Crea un nuevo data.frame "no_health" que recoja solo las filas (cereales)
+#con más de 80 calorías y menos de 20 vitaminas y minerales.
+
+
+# 5. Crea un data.frame con aquellos cereales con al menos  1 unidad de
+# azúcar, manteniendo solo las columnas "Cereal.name", "Calories" y 
+# "Vitamins.and.Minerals".
 
