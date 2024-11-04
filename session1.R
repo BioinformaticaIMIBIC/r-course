@@ -33,9 +33,6 @@ iris <- read.csv(file = "iris.csv", header = TRUE, sep = ",", dec = ".")
 dim(iris)
 View(iris)
 
-table(iris$variety)
-
-
 
 ?read.table
 input_csv <- read.table("iris.csv", header = TRUE, 
