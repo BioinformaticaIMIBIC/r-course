@@ -39,7 +39,6 @@ input_csv <- read.table("iris.csv", header = TRUE,
                         sep = ",", dec = ".")
 
 # Importa el dataset titanic.csv
-#
 #  |
 #  '--> Aquí va tú código
    
@@ -55,7 +54,6 @@ input_xlsx <- read_excel("iris_dataset.xlsx" )
 # Ejercicio 1. Calcula el área de un círculo con radio 5
 #  |
 #  '--> Aquí va tú código
-A <- 3.1415 * 5 ^ 2
    
 
 
