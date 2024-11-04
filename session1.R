@@ -243,10 +243,10 @@ mi_lista[-3] # Equivalente
 
 
 # 4. Crea un nuevo data.frame "no_health" que recoja solo las filas (cereales)
-#con más de 80 calorías y menos de 20 vitaminas y minerales.
+# con más de 80 calorías y menos de 20 vitaminas y minerales.
 
 
 # 5. Crea un data.frame con aquellos cereales con al menos  1 unidad de
-# azúcar, manteniendo solo las columnas "Cereal.name", "Calories" y 
+# azúcar, manteniendo solo las columnas "Cereal.Name", "Calories" y 
 # "Vitamins.and.Minerals".
 
