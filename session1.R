@@ -235,7 +235,7 @@ mi_lista[-3] # Equivalente
 
 
 # 3. Crea una nueva columna llamada "totalcarb" que sea la suma de las columnas
-# "carbo" y "sugars".
+# "Carbs" y "sugars".
 
 
 # 4. Crea un nuevo data.frame "kelloggs" que recoja solo las filas del dataset 
