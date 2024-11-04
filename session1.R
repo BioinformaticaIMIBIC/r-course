@@ -54,6 +54,7 @@ input_xlsx <- read_excel("iris_dataset.xlsx" )
 # Ejercicio 1. Calcula el área de un círculo con radio 5
 #  |
 #  '--> Aquí va tú código
+
    
 
 
@@ -77,11 +78,18 @@ vector <- c(1, 3, 5, 7, 9)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Asignación de variables
+x <- 1
+x
+
 x <- 3
+x
+class(x)
+
+x_v2 <- as.character(3)
+x_v2
+class(x_v2)
 
 x + "cuatro"
-
-class(x)
 class("cuatro")
 
 y <- c(1:10)
@@ -89,6 +97,9 @@ class(y)
 
 # Operaciones con vectores
 x + y
+
+x_v2 + y
+
 z <- x * y
 
 # Indexando vectores
@@ -178,6 +189,7 @@ colnames(df) <- c("Columna_1", "Columna_2", "Columna_3", "Columna_4")
 rownames(df) # ¿Cómo se llaman las filas?
 rownames(df) <- c("Fila 1", "Fila 2", "Fila 3")
 
+df
 dimnames(df)
 
 df[, 1] # Extrae la 1º columna (igual que df[c(1,2,3), 1])
@@ -235,7 +247,7 @@ mi_lista[-3] # Equivalente
 
 
 # 3. Crea una nueva columna llamada "totalcarb" que sea la suma de las columnas
-# "Carbs" y "sugars".
+# "Carbs" y "Sugars".
 
 
 # 4. Crea un nuevo data.frame "kelloggs" que recoja solo las filas del dataset 
@@ -246,7 +258,7 @@ mi_lista[-3] # Equivalente
 # con más de 80 calorías y menos de 20 vitaminas y minerales.
 
 
-# 5. Crea un data.frame con aquellos cereales con al menos  1 unidad de
+# 5. Crea un data.frame con aquellos cereales con al menos 1 unidad de
 # azúcar, manteniendo solo las columnas "Cereal.Name", "Calories" y 
 # "Vitamins.and.Minerals".
 
