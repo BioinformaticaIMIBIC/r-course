@@ -10,6 +10,7 @@
 ################################################################################
 
 
+
 ## 🚀 ¡COMENZAMOS!
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -24,8 +25,6 @@ getwd()
 # La instalación solo es necesaria una vez; la carga se hace en cada sesión.
 install.packages("readxl")  # Instala el paquete 'readxl' (para archivos Excel)
 library(readxl)              # Carga el paquete en memoria
-
-
 
 
 ## 📊 Importar datasets
@@ -49,12 +48,9 @@ input_csv <- read.table("iris.csv", header = TRUE, sep = ",", dec = ".")
 # titanic <- ...
 
 
-
 # Leer datos desde Excel (.xlsx)
 input_xlsx <- read_excel("iris_dataset.xlsx")
 View(input_xlsx)
-
-
 
 
 ## Operadores en R
@@ -64,7 +60,6 @@ View(input_xlsx)
 # Ejercicio 1. Calcula el área de un círculo con radio 5
 #  |
 #  '--> Aquí va tú código
-
 
 
 
@@ -81,7 +76,6 @@ vector <- c(1, 3, 5, 7, 9)
 #  |
 #  '--> Aquí va tú código (Sigue los ejemplos de la presentación)
 vector > 3
-
 
 
 
@@ -140,9 +134,6 @@ z[c(-1, -2)]  # Elimina los dos primeros
 length(z)     # Número de elementos
 
 
-
-
-
 (n <- matrix(data = 4:12,
           nrow = 3,
           ncol = 3, byrow = TRUE)) # Por columnas (parámetro byrow)
@@ -195,7 +186,6 @@ t(n)     # Transponer matriz
 
 
 
-
 ## 🧾 Operaciones con DataFrames
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -235,7 +225,6 @@ df[df$Columna_1 > 5, ]     # El simbolo "$" permite indexar una columna
 
 
 
-
 ## 📚 Operaciones con listas
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -268,54 +257,42 @@ mi_lista
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-## Ejercicios complementarios
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 # Vamos a trabajar con un dataset de pruebas diagnósticas de COVID-19.
 
 # 1. Carga el paquete medicaldata e importa el dataset covid_testing.
 library(medicaldata)
-data("covid_testing")
+
 
 # 2. Visualiza el dataset y su estructura (nombres de columnas, filas, 
 # dimensiones y tipos de variables).
-colnames(covid_testing)
-dim(covid_testing)
-str(covid_testing)
+
 
 # 3. Muestra las primeras y últimas filas del dataset.
-head(covid_testing)
-tail(covid_testing)
+
 
 # 4. Crea una nueva columna llamada "total_tat" que sea la suma de las columnas
 # "col_rec_tat" y "rec_ver_tat" (tiempo total del proceso en horas).
-covid_testing$total_tat <- covid_testing$col_rec_tat + covid_testing$rec_ver_tat
+
 
 # 5. Crea un nuevo data.frame llamado "positivos" que recoja solo las filas del 
 # dataset cuyo resultado haya sido "positive".
-positivos <- covid_testing[covid_testing$result == "positive", ]
+
 
 # 6. Crea otro data.frame llamado "negativos" con las filas cuyo resultado haya 
 # sido "negative".
-negativos <- covid_testing[covid_testing$result == "negative", ]
+
 
 # 7. Crea un nuevo data.frame llamado "tardio" que recoja solo las filas en las que
 # el tiempo total de proceso (total_tat) haya sido superior a 24 horas.
-tardio <- covid_testing[covid_testing$total_tat > 24, ]
+
 
 # 8. Crea un data.frame "adultos_clientes" que contenga solo los sujetos cuyo
 # demo_group sea "client" o "misc_adult".
-adultos_clientes <- covid_testing[covid_testing$demo_group %in% c("client", "misc_adult"), ]
+
 
 # 9. Crea un nuevo data.frame "sospechosos" con los registros cuyo resultado sea "invalid"
 # y mantén solo las columnas "subject_id", "clinic_name" y "col_rec_tat".
-sospechosos <- covid_testing[covid_testing$result == "invalid", 
-                             c("subject_id", "clinic_name", "col_rec_tat")]
 
 # 10. Encuentra al último descendiente Targaryen varón, menor de 10 años y con 
 # resultado positivo
-the_last_one <- covid_testing[covid_testing$fake_last_name == "targaryen" & 
-                              covid_testing$gender != "female" &
-                              covid_testing$age < 10 & 
-                              covid_testing$result == "positive",]
+
