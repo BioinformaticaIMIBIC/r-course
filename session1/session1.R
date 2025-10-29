@@ -43,8 +43,7 @@ View(iris)     # Abre una vista tipo Excel
 input_csv <- read.table("iris.csv", header = TRUE, sep = ",", dec = ".")
 
 # 🧩 Ejercicio 1. Importa el dataset "titanic.csv"
-#  |
-#  '--> Escribe tu código aquí:
+
 # titanic <- ...
 
 
@@ -57,24 +56,23 @@ View(input_xlsx)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Aritméticos
-# Ejercicio 1. Calcula el área de un círculo con radio 5
-#  |
-#  '--> Aquí va tú código
+# Ejercicio 1. Calcula el IMC de un paciente de 68 kg y 1.70 metros.
 
 
 
-# Ejercicio 2. Calcula el contenido de Guanina-Citosina (GC) en una secuencia
-# de ADN
-seq <- "GCCATGAGGGTC"
-#  |
-#  '--> Aquí va tú código
+
+# Ejercicio 2. Calcula el crecimiento exponencial de una población bacteriana
+#  Pobl_ini: 1e6
+#  Tasa de crecimiento (r): 0.3
+#  Tiempo transcurrido: 5h
+
    
    
 
 # Relacionales y lógicos
 vector <- c(1, 3, 5, 7, 9)
 #  |
-#  '--> Aquí va tú código (Sigue los ejemplos de la presentación)
+#  Sigue los ejemplos de la presentación
 vector > 3
 
 
@@ -149,22 +147,20 @@ m
 
 # 🧩 Ejercicio 5. Crea una matriz (p) con la secuencia del 1 al 20
 # de 4 filas y 5 columnas
-#  |
-#  '--> Escribe tu código aquí:
+
 # p <- ...
 
 
 # Casos con diferentes números de elementos:
-matrix(1:12, nrow = 5, ncol = 4)  # Faltan valores
-matrix(1:12, nrow = 2, ncol = 5)  # Sobran valores
+matrix(1:12, nrow = 5, ncol = 4)  
+matrix(1:12, nrow = 2, ncol = 5)
 
 # Añadir filas y columnas
 new_row <- c(5, 10, 15)
 rbind(m, new_row)
 
 # 🧩 Ejercicio 6. Añade una nueva fila inventada a la matriz "m"
-#  |
-#  '--> Tu código aquí
+
 
 
 new_col <- c(7, 14, 21)
@@ -222,7 +218,7 @@ df[df$Columna_1 > 5, ]     # El simbolo "$" permite indexar una columna
 
 # 🧩 Ejercicio 7. Cambia los nombres de las columnas del dataframe iris
 # por "Sepalo_Largo", "Sepalo_Ancho", "Petalo_Largo", "Petalo_Ancho", "Especie"
-
+data(iris)
 
 
 ## 📚 Operaciones con listas
@@ -292,6 +288,7 @@ library(medicaldata)
 
 # 9. Crea un nuevo data.frame "sospechosos" con los registros cuyo resultado sea "invalid"
 # y mantén solo las columnas "subject_id", "clinic_name" y "col_rec_tat".
+
 
 # 10. Encuentra al último descendiente Targaryen varón, menor de 10 años y con 
 # resultado positivo
