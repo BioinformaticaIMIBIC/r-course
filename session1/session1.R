@@ -1,50 +1,60 @@
 ################################################################################
 # Título: Sesión práctica 1                                                    #
 # Curso: El poder para explotar tus datos                                      #
-# Fecha: 04/11/2024                                                            #
+# Fecha: 03/11/2025                                                            #
+# Objetivo: Primeros pasos con R, estructuras de datos y operaciones básicas   #
 #                                                                              #
 # Autor: Adrián Santiago                                                       #
 # Descripción: session1.R es parte de un curso de iniciación a R impartido por #
-#              la UCAIB Bioinformática y Bioestadística del IMIBIC.            # 
+#              la UCAIB Bioinformática y Bioestadística del IMIBIC.            #
 ################################################################################
 
 
-## ¡COMENZAMOS!
+## 🚀 ¡COMENZAMOS!
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Directorio de trabajo (wd)
+# 📂 Directorio de trabajo (working directory)
+# Comprueba el directorio actual:
 getwd()
-#setwd("C:/Users/Documents")
 
-# Instalar paquetes de R
-install.packages("readxl") # este comando sirve para instalar un paquete
-library(readxl)
+# Establece tu propio directorio (modifica la ruta según corresponda)
+# setwd("C:/Users/TuUsuario/Documents")
+
+# 📦 Instalación y carga de paquetes
+# La instalación solo es necesaria una vez; la carga se hace en cada sesión.
+install.packages("readxl")  # Instala el paquete 'readxl' (para archivos Excel)
+library(readxl)              # Carga el paquete en memoria
 
 
 
-## Importar datasets
+
+## 📊 Importar datasets
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Cargar tablas
-# 
-# ¿Qué hace el comando "X" y cuáles son sus parámetros?
+# 💡 ¿Qué hace el comando "read.csv"? ¿Qué parámetros acepta?
 ?read.csv
+
+# Ejemplo: importar el dataset iris desde un archivo CSV
 iris <- read.csv(file = "iris.csv", header = TRUE, sep = ",", dec = ".")
-dim(iris)
-View(iris)
+dim(iris)      # Muestra el número de filas y columnas
+View(iris)     # Abre una vista tipo Excel
 
-
+# Otro método para leer archivos de texto
 ?read.table
-input_csv <- read.table("iris.csv", header = TRUE, 
-                        sep = ",", dec = ".")
+input_csv <- read.table("iris.csv", header = TRUE, sep = ",", dec = ".")
 
-# Importa el dataset titanic.csv
+# 🧩 Ejercicio 1. Importa el dataset "titanic.csv"
 #  |
-#  '--> Aquí va tú código
-   
+#  '--> Escribe tu código aquí:
+# titanic <- ...
 
 
-input_xlsx <- read_excel("iris_dataset.xlsx" )
+
+# Leer datos desde Excel (.xlsx)
+input_xlsx <- read_excel("iris_dataset.xlsx")
+View(input_xlsx)
+
+
 
 
 ## Operadores en R
@@ -55,10 +65,10 @@ input_xlsx <- read_excel("iris_dataset.xlsx" )
 #  |
 #  '--> Aquí va tú código
 
-   
 
 
-# Ejercicio 2. Calcula el contenido de Guanina-Citosina (GC) en una secuencia 
+
+# Ejercicio 2. Calcula el contenido de Guanina-Citosina (GC) en una secuencia
 # de ADN
 seq <- "GCCATGAGGGTC"
 #  |
@@ -70,26 +80,28 @@ seq <- "GCCATGAGGGTC"
 vector <- c(1, 3, 5, 7, 9)
 #  |
 #  '--> Aquí va tú código (Sigue los ejemplos de la presentación)
+vector > 3
 
 
 
 
-## Operaciones con vectores
+## 📦 Operaciones con vectores
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Asignación de variables
 x <- 1
 x
-
 x <- 3
 x
 class(x)
 
+
+# Pongamos a prueba a R...
 x_v2 <- as.character(3)
 x_v2
 class(x_v2)
 
-x + "cuatro"
+x + "cuatro"      # ¿Qué ocurre?
 class("cuatro")
 
 y <- c(1:10)
@@ -108,68 +120,83 @@ z[1:3]
 z[8:12]
 
 length(z) # ¿Cuántos elementos tengo?
-
 z
+
 z[-1] # Descarta el primer elemento
 z[c(-1, -2)]
 z[c(-1: -5)]
 
+# Secuencias y operaciones
+y <- 1:10
+x + y
+z <- x * y
+z
+
+# Indexación de vectores
+z[4]          # Elemento 4
+z[1:3]        # Elementos 1 al 3
+z[-1]         # Todos menos el primero
+z[c(-1, -2)]  # Elimina los dos primeros
+length(z)     # Número de elementos
 
 
 
 
-
-## Operaciones con matrices
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# Crear una matriz
-m <- matrix(data = 1:9, nrow = 3, ncol = 3) 
-m
-
-# Crea una matriz (p) de 20 elementos con la secuencia del 1 al 20
-#  |
-#  '--> Aquí va tú código
-
-# ¿Menos valores que espacios?
-matrix(1:12, nrow = 5, ncol = 4)
-
-# ¿Más valores que espacios?
-matrix(1:12, nrow = 2, ncol = 5)
-
-new_row <- c(5, 10, 15)
-rbind(m, new_row) # Añadir nueva fila
-
-# Inventa y añade una nueva fila a la matriz "m"
-#  |
-#  '--> Aquí va tú código
-
-
-new_col <- c(7, 14, 21)
-cbind(m, new_col) # Añadir nueva columna
 
 (n <- matrix(data = 4:12,
           nrow = 3,
-          ncol = 3)) # Por columnas (parámetro byrow)
+          ncol = 3, byrow = TRUE)) # Por columnas (parámetro byrow)
 
 
+
+## 🧮 Operaciones con matrices
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Crear una matriz
+m <- matrix(data = 1:9, nrow = 3, ncol = 3)
+m
+
+# 🧩 Ejercicio 5. Crea una matriz (p) con la secuencia del 1 al 20
+# de 4 filas y 5 columnas
+#  |
+#  '--> Escribe tu código aquí:
+# p <- ...
+
+
+# Casos con diferentes números de elementos:
+matrix(1:12, nrow = 5, ncol = 4)  # Faltan valores
+matrix(1:12, nrow = 2, ncol = 5)  # Sobran valores
+
+# Añadir filas y columnas
+new_row <- c(5, 10, 15)
+rbind(m, new_row)
+
+# 🧩 Ejercicio 6. Añade una nueva fila inventada a la matriz "m"
+#  |
+#  '--> Tu código aquí
+
+
+new_col <- c(7, 14, 21)
+cbind(m, new_col)
+
+# Crear matriz por columnas (byrow = FALSE por defecto)
+(n <- matrix(4:12, nrow = 3, ncol = 3))
+
+# Operaciones entre matrices
 m + n
 m * n
 m ^ 2
 m / 2
-
-t(n) # Trasponer matriz
-
+t(n)     # Transponer matriz
 
 # Multiplicación matricial
 # (o <- matrix(6:1, nrow = 3, ncol = 2))
-# 
-# dim(n)
-# dim(o)
-# 
 # n %*% o
 
 
-## Operaciones con DataFrames
+
+
+## 🧾 Operaciones con DataFrames
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 df <- as.data.frame(n)
@@ -177,43 +204,48 @@ View(df)
 
 head(df)
 dim(df)
-head(iris)
 
-colnames(df) # ¿Cómo se llaman las columnas?
-colnames(df) <- c("Columna 1", "Columna 2", "Columna 3")
+# ¿Cómo se llaman las columnas?
+colnames(df)
+colnames(df) <- c("Columna_1", "Columna_2", "Columna_3")
 df
 
-colnames(df) <- c("Columna_1", "Columna_2")
-colnames(df) <- c("Columna_1", "Columna_2", "Columna_3", "Columna_4")
+# ¿Cómo se llaman las filas?
+rownames(df)
+rownames(df) <- c("Fila_1", "Fila_2", "Fila_3")
 
-rownames(df) # ¿Cómo se llaman las filas?
-rownames(df) <- c("Fila 1", "Fila 2", "Fila 3")
+# Acceso por índices o nombres
+df[, 1]           # Primera columna
+df[2, ]           # Segunda fila
+df["Fila_2", ]    # Fila por nombre
+df[2, c(1, 2)]    # Fila 2, columnas 1 y 2
 
-df
-dimnames(df)
-
-df[, 1] # Extrae la 1º columna (igual que df[c(1,2,3), 1])
-df[2, ] # Extrae la 2º fila
-df["Fila 2",]
-
-df[2, ] <- c(-3, -6, -9) # Sobreescribir elemento(s) del DataFrame
+# Sobreescribir elemento(s) del DataFrame
+df[2, ] <- c(-3, -6, -9)
 df[2, ] <- c(-3, -7) 
 df
 
-df[2, c(1,2)]
-
-df[df$Columna_1 > 5, ] # El simbolo "$" permite indexar una columna 
-                       # por su nombre
-
+# Filtrado con condiciones
+df[df$Columna_1 > 5, ]     # El simbolo "$" permite indexar una columna 
+                           # por su nombre
 
 
+# 🧩 Ejercicio 7. Cambia los nombres de las columnas del dataframe iris
+# por "Sepalo_Largo", "Sepalo_Ancho", "Petalo_Largo", "Petalo_Ancho", "Especie"
 
 
-## Operaciones con listas
+
+
+## 📚 Operaciones con listas
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-mi_lista <- list("objeto1" = 7, "objeto2" = "21", "objeto3" = as.factor(3),
-                 "objeto4" = matrix(1:4, nrow = 2))
+mi_lista <- list(
+    "objeto1" = 7,
+    "objeto2" = "21",
+    "objeto3" = as.factor(3),
+    "objeto4" = matrix(1:4, nrow = 2)
+)
+
 mi_lista
 
 mi_lista["objeto2"]
@@ -222,43 +254,68 @@ mi_lista[["objeto2"]]
 mi_lista["objeto1", "objeto2"] # ¿Qué ha pasado?
 mi_lista[c("objeto1", "objeto2")]
 
+# Añadir y eliminar elementos
 mi_lista["objeto5"] # ¿Por qué devuelve null?
+mi_lista
 
 mi_lista[[5]] <- data.frame(X = c(5, 2, 3), Y = c(7, 2, 9))
+mi_lista[[3]] <- NULL # mi_lista[-3] es equivalente
 mi_lista
 
-mi_lista[[3]] <- NULL
-mi_lista
-mi_lista[-3] # Equivalente
 
+
+## 🧠 Ejercicios complementarios
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 ## Ejercicios complementarios
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-# Vamos a trabajar con un dataset de marcas comerciales de cereales.
+# Vamos a trabajar con un dataset de pruebas diagnósticas de COVID-19.
 
-# 1. Importa el dataset cereal.csv.
+# 1. Carga el paquete medicaldata e importa el dataset covid_testing.
+library(medicaldata)
+data("covid_testing")
 
+# 2. Visualiza el dataset y su estructura (nombres de columnas, filas, 
+# dimensiones y tipos de variables).
+colnames(covid_testing)
+dim(covid_testing)
+str(covid_testing)
 
-# 2. Visualiza el dataset y su estructura (nombre de columnas, filas, 
-# dimesiones, tipos de clases en sus columnas).
+# 3. Muestra las primeras y últimas filas del dataset.
+head(covid_testing)
+tail(covid_testing)
 
+# 4. Crea una nueva columna llamada "total_tat" que sea la suma de las columnas
+# "col_rec_tat" y "rec_ver_tat" (tiempo total del proceso en horas).
+covid_testing$total_tat <- covid_testing$col_rec_tat + covid_testing$rec_ver_tat
 
-# 3. Crea una nueva columna llamada "totalcarb" que sea la suma de las columnas
-# "Carbs" y "Sugars".
+# 5. Crea un nuevo data.frame llamado "positivos" que recoja solo las filas del 
+# dataset cuyo resultado haya sido "positive".
+positivos <- covid_testing[covid_testing$result == "positive", ]
 
+# 6. Crea otro data.frame llamado "negativos" con las filas cuyo resultado haya 
+# sido "negative".
+negativos <- covid_testing[covid_testing$result == "negative", ]
 
-# 4. Crea un nuevo data.frame "kelloggs" que recoja solo las filas del dataset 
-# cuyo manufacturador sea "Kelloggs".
+# 7. Crea un nuevo data.frame llamado "tardio" que recoja solo las filas en las que
+# el tiempo total de proceso (total_tat) haya sido superior a 24 horas.
+tardio <- covid_testing[covid_testing$total_tat > 24, ]
 
+# 8. Crea un data.frame "adultos_clientes" que contenga solo los sujetos cuyo
+# demo_group sea "client" o "misc_adult".
+adultos_clientes <- covid_testing[covid_testing$demo_group %in% c("client", "misc_adult"), ]
 
-# 4. Crea un nuevo data.frame "no_health" que recoja solo las filas (cereales)
-# con más de 80 calorías y menos de 20 vitaminas y minerales.
+# 9. Crea un nuevo data.frame "sospechosos" con los registros cuyo resultado sea "invalid"
+# y mantén solo las columnas "subject_id", "clinic_name" y "col_rec_tat".
+sospechosos <- covid_testing[covid_testing$result == "invalid", 
+                             c("subject_id", "clinic_name", "col_rec_tat")]
 
-
-# 5. Crea un data.frame con aquellos cereales con al menos 1 unidad de
-# azúcar, manteniendo solo las columnas "Cereal.Name", "Calories" y 
-# "Vitamins.and.Minerals".
-
+# 10. Encuentra al último descendiente Targaryen varón, menor de 10 años y con 
+# resultado positivo
+the_last_one <- covid_testing[covid_testing$fake_last_name == "targaryen" & 
+                              covid_testing$gender != "female" &
+                              covid_testing$age < 10 & 
+                              covid_testing$result == "positive",]
