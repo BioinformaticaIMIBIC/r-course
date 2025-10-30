@@ -56,12 +56,12 @@ View(input_xlsx)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Aritméticos
-# Ejercicio 1. Calcula el IMC de un paciente de 68 kg y 1.70 metros.
+# Ejercicio 2. Calcula el IMC de un paciente de 68 kg y 1.70 metros.
 
 
 
 
-# Ejercicio 2. Calcula el crecimiento exponencial de una población bacteriana
+# Ejercicio 3. Calcula el crecimiento exponencial de una población bacteriana
 #  Pobl_ini: 1e6
 #  Tasa de crecimiento (r): 0.3
 #  Tiempo transcurrido: 5h
@@ -145,7 +145,7 @@ length(z)     # Número de elementos
 m <- matrix(data = 1:9, nrow = 3, ncol = 3)
 m
 
-# 🧩 Ejercicio 5. Crea una matriz (p) con la secuencia del 1 al 20
+# 🧩 Ejercicio 4. Crea una matriz (p) con la secuencia del 1 al 20
 # de 4 filas y 5 columnas
 
 # p <- ...
@@ -159,7 +159,7 @@ matrix(1:12, nrow = 2, ncol = 5)
 new_row <- c(5, 10, 15)
 rbind(m, new_row)
 
-# 🧩 Ejercicio 6. Añade una nueva fila inventada a la matriz "m"
+# 🧩 Ejercicio 5. Añade una nueva fila inventada a la matriz "m"
 
 
 
@@ -216,7 +216,7 @@ df[df$Columna_1 > 5, ]     # El simbolo "$" permite indexar una columna
                            # por su nombre
 
 
-# 🧩 Ejercicio 7. Cambia los nombres de las columnas del dataframe iris
+# 🧩 Ejercicio 6. Cambia los nombres de las columnas del dataframe iris
 # por "Sepalo_Largo", "Sepalo_Ancho", "Petalo_Largo", "Petalo_Ancho", "Especie"
 data(iris)
 
@@ -254,9 +254,9 @@ mi_lista
 
 
 # Vamos a trabajar con un dataset de pruebas diagnósticas de COVID-19.
+install.packages("medicaldata")
 
 # 1. Carga el paquete medicaldata e importa el dataset covid_testing.
-library(medicaldata)
 
 
 # 2. Visualiza el dataset y su estructura (nombres de columnas, filas, 
@@ -283,13 +283,12 @@ library(medicaldata)
 
 
 # 8. Crea un data.frame "adultos_clientes" que contenga solo los sujetos cuyo
-# demo_group sea "client" o "misc_adult".
+# demo_group sea "client" o "misc adult".
 
 
 # 9. Crea un nuevo data.frame "sospechosos" con los registros cuyo resultado sea "invalid"
 # y mantén solo las columnas "subject_id", "clinic_name" y "col_rec_tat".
 
 
-# 10. Encuentra al último descendiente Targaryen varón, menor de 10 años y con 
-# resultado positivo
-
+# 10. Encuentra al último descendiente Targaryen varón, nonato (edad = 0) y 
+# con resultado positivo
