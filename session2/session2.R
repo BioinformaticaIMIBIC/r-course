@@ -4,7 +4,7 @@
 # Fecha: 05/11/2025                                                            #
 # Objetivo: Estructuras de control y flujos de ejecución                       #
 #                                                                              #
-# Ponente: Adrián Santiago                                                       #
+# Ponente: Adrián Santiago                                                     #
 # Descripción: session2.R es parte de un curso de iniciación a R impartido por #
 #              la UCAIB Bioinformática y Bioestadística del IMIBIC.            #
 ################################################################################
@@ -108,5 +108,6 @@ indo_rct$bleed[is.na(indo_rct$bleed)] <- "no_data" # Completa las celdas vacías
 
 # 🧩 Ejercicio 10. Crea una columna stent_protector con "Sí" si el paciente 
 # tiene cualquiera de estos factores
+
 
 
