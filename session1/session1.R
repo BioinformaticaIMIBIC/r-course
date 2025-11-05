@@ -4,7 +4,7 @@
 # Fecha: 03/11/2025                                                            #
 # Objetivo: Primeros pasos con R, estructuras de datos y operaciones básicas   #
 #                                                                              #
-# Autor: Adrián Santiago                                                       #
+# Ponente: Adrián Santiago                                                     #
 # Descripción: session1.R es parte de un curso de iniciación a R impartido por #
 #              la UCAIB Bioinformática y Bioestadística del IMIBIC.            #
 ################################################################################
@@ -292,3 +292,4 @@ install.packages("medicaldata")
 
 # 10. Encuentra al último descendiente Targaryen varón, nonato (edad = 0) y 
 # con resultado positivo
+
