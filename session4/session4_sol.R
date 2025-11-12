@@ -18,6 +18,8 @@ library(ggplot2)
 install.packages("MedDataSets")
 library(MedDataSets)
 
+library(medicaldata)
+
 install.packages("patchwork")
 
 
@@ -199,6 +201,7 @@ plot_compl4 <- ggplot(data = diabetes,
 # 🧩 Ejercicio 5. Muestra todos los gráficos en una misma visualización
 # haciendo uso de patchwork
 (plot_compl1 | plot_compl2) / (plot_compl3 | plot_compl4)
+
 
 
 
