@@ -18,6 +18,8 @@ library(ggplot2)
 install.packages("MedDataSets")
 library(MedDataSets)
 
+library(medicaldata)
+
 install.packages("patchwork")
 
 
@@ -168,6 +170,7 @@ hist <- ggplot(strep_tb, aes(x = baseline_condition, fill = improved)) +
 
 # 🧩 Ejercicio 5. Muestra todos los gráficos en una misma visualización
 # haciendo uso de patchwork
+
 
 
 
