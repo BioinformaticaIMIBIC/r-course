@@ -1,7 +1,7 @@
 ################################################################################
 # Título: Sesión práctica 4                                                    #
 # Curso: El poder para explotar tus datos                                      #
-# Fecha: 12/11/2025                                                            #
+# Fecha: 05/11/2026                                                            #
 #                                                                              #
 # Autor: Adrián Santiago                                                       #
 # Descripción: session4.R es parte de un curso de iniciación a R impartido por #
