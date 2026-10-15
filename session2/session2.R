@@ -1,7 +1,7 @@
 ################################################################################
 # Título: Sesión práctica 2                                                    #
 # Curso: El poder para explotar tus datos                                      #
-# Fecha: 05/11/2025                                                            #
+# Fecha: 29/10/2026                                                            #
 # Objetivo: Estructuras de control y flujos de ejecución                       #
 #                                                                              #
 # Ponente: Adrián Santiago                                                     #
