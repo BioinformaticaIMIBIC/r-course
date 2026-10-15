@@ -75,4 +75,4 @@ Desarrollar las habilidades necesarias para aplicar **R** en el **análisis de d
  ┣ 📂 session4/                          # Código fuente y ejemplos prácticos para la sesión 4
  ┣ 📜 Cómo instalar R y RStudio.pdf      # Guía para instalar los softwares requeridos
  ┣ 📜 README.md                          # Información general del curso
- ┗ 📜 download_R_RStudio_for_macOs.pdf   # Guía de instalación en macOS
+ ┗ 📜 download_R_RStudio_for_macOs.md    # Guía de instalación en macOS
