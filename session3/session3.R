@@ -1,7 +1,7 @@
 ################################################################################
 # Título: Sesión práctica 3                                                    #
 # Curso: El poder para explotar tus datos                                      #
-# Fecha: 10/11/2025                                                            #
+# Fecha: 03/11/2026                                                            #
 # Objetivo: Funciones                                                          #
 #                                                                              #
 # Ponente: Adrián Santiago                                                     #
