@@ -1,7 +1,7 @@
 ################################################################################
 # Título: Sesión práctica 1                                                    #
 # Curso: El poder para explotar tus datos                                      #
-# Fecha: 03/11/2025                                                            #
+# Fecha: 27/10/2026                                                            #
 # Objetivo: Primeros pasos con R, estructuras de datos y operaciones básicas   #
 #                                                                              #
 # Autor: Adrián Santiago                                                       #
