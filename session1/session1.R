@@ -36,7 +36,6 @@ if (length(nuevos) > 0) install.packages(nuevos)
 
 library(tidyverse)
 library(readxl)
-library(here)
 library(janitor)
 library(skimr)
 library(medicaldata)
@@ -277,6 +276,10 @@ filter(iris_csv, Sepal.Length < 5.0)
 iris |> 
     mutate(Sepal.Ratio = Sepal.Length/Sepal.Width, .keep = "used")
 
+iris %>% 
+    group_by(Species) %>% 
+    summarize(sl_mean = mean(Sepal.Length), sw_mean = mean(Sepal.Width), 
+              pl_mean = mean(Petal.Length), pw_mean = mean(Petal.Width))
 
 ## 📚 Operaciones con listas
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
