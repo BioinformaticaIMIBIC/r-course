@@ -265,12 +265,12 @@ skim(iris_csv)
 
 
 # Mas ejemplos de las bondades del paquete dplyr
-select(iris_csv, -Species)
-select(iris_csv, 3:5)
-select(iris_csv, contains("Sepal"))
+select(iris, -Species)
+select(iris, 3:5)
+select(iris, contains("Sepal"))
 
-filter(iris_csv, Sepal.Length >= 5.0 & Sepal.Width >= 4.0)
-filter(iris_csv, Sepal.Length < 5.0)
+filter(iris, Sepal.Length >= 5.0 & Sepal.Width >= 4.0)
+filter(iris, Sepal.Length < 5.0)
 
 ?mutate
 iris |> 
