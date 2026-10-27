@@ -258,7 +258,7 @@ datos_na |>
 
 
 # Visión general del dataframe
-skim(iris_csv)
+skim(iris)
 
 ?rename
 # as_tibble(iris)... 
